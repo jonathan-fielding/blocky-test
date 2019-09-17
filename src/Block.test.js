@@ -11,4 +11,24 @@ describe('Block', () => {
       expect(COLOURS).toContain(block.colour);
     });
   });
+
+  it('should allow removing of block', () => {
+    const block = new Block(0, 0, 'grey');
+    expect(block.display).toBe(true);
+
+    block.remove();
+
+    expect(block.display).toBe(false);
+  });
+
+  it('should allow setting co-ordinates', () => {
+    const block = new Block(0, 0, 'grey');
+    expect(block.x).toBe(0);
+    expect(block.y).toBe(0);
+
+    block.setCoordinates(1, 2);
+
+    expect(block.x).toBe(1);
+    expect(block.y).toBe(2);
+  });
 });
